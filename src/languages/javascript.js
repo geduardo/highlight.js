@@ -62,7 +62,7 @@ function(hljs) {
   ]);
 
   return {
-    aliases: ['js', 'jsx'],
+    aliases: ['js', 'jsx', 'bodejs'],
     keywords: KEYWORDS,
     contains: [
       {
