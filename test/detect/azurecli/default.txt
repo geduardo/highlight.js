@@ -1,0 +1,12 @@
+az login \ 
+  --service-principal -u http://azure-cli-2016-08-05-14-31-15 -p VerySecret \ 
+  --tenant contoso.onmicrosoft.com
+
+az login
+
+az vm deallocate -g my_rg -n my_vm_name
+az vm generalize -g my_rg -n my_vm_name
+az vm capture -g my_rg -n my_vm_name \ 
+  --vhd-name-prefix my_prefix
+
+az account set
