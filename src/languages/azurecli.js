@@ -10,6 +10,18 @@ Author: Duncan Mackenzie <duncanma@duncanmackenzie.net>
         {begin: /\$\{(.*?)}/}
         ]
     };
+    var PARAMETER = 
+    {
+      // Match command line parameters (-p, -u)
+      className: 'parameter',
+      variants: [ //single dash, double dash, double dash in square brackets
+        {begin: ' -{1,2}[a-zA-Z\-]*'},
+        {begin: '--[a-zA-Z\-]*'},
+        {begin: '\[--[a-zA-Z\-]*\]'},
+      ],
+      relevance: 0
+    };
+
     var QUOTE_STRING = {
         className: 'string',
         begin: /"/, end: /"/,
@@ -101,13 +113,7 @@ Author: Duncan Mackenzie <duncanma@duncanmackenzie.net>
         className: 'number',
         begin: '\\b([0-9]+[0-9edED\.]*[#\!]?)',
         relevance: 0
-      },
-      {
-        // Match command line parameters (-p, -u)
-        className: 'parameter',
-        begin: ' -{1,2}[a-zA-Z\-]* ',
-        relevance: 0
-      },
+      }, PARAMETER,
       AngleBracket_STRING,
       hljs.HASH_COMMENT_MODE,
       QUOTE_STRING,

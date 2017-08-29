@@ -15,10 +15,27 @@ function(hljs) {
       {begin: /\$[\w\d][\w\d_:]*/}
     ]
   };
+
+  var PSCOMMAND = {
+    className: 'pscommand',
+    begin: /[A-Z][a-z]+-[A-Z][a-z]+[A-Za-z]*/
+  };
+  
   var LITERAL = {
     className: 'literal',
     begin: /\$(null|true|false)\b/
   };
+  var PARAMETER = 
+  {
+    // Match command line parameters (-p, -u)
+    className: 'parameter',
+    variants: [
+      {begin: ' -{1,2}[a-zA-Z\-]*'},
+      {begin: '--[a-zA-Z\-]*'},
+    ],
+    relevance: 0
+  };
+
   var QUOTE_STRING = {
     className: 'string',
     variants: [
@@ -34,6 +51,17 @@ function(hljs) {
       }
     ]
   };
+
+/*   var SQUAREPARAM = {
+    className: 'squareparam',
+    begin: '/\[/', 
+    end:'/]/,',
+    contains: [
+      PARAMETER,
+      QUOTE_STRING
+    ]    
+  };
+ */  
   var APOS_STRING = {
     className: 'string',
     variants: [
@@ -45,7 +73,7 @@ function(hljs) {
   var PS_HELPTAGS = {
     className: 'doctag',
     variants: [
-      /* no paramater help tags */ 
+      /* no parameter help tags */ 
       { begin: /\.(synopsis|description|example|inputs|outputs|notes|link|component|role|functionality)/ },
       /* one parameter help tags */
       { begin: /\.(parameter|forwardhelptargetname|forwardhelpcategory|remotehelprunspace|externalhelp)\s+\S+/ }
@@ -80,7 +108,9 @@ function(hljs) {
       APOS_STRING,
       LITERAL,
       VAR,
-      PS_COMMENT
+      PS_COMMENT,
+      PARAMETER,
+      PSCOMMAND
     ]
   };
 }
