@@ -113,7 +113,8 @@ Author: Duncan Mackenzie <duncanma@duncanmackenzie.net>
         className: 'number',
         begin: '\\b([0-9]+[0-9edED\.]*[#\!]?)',
         relevance: 0
-      }, PARAMETER,
+      }, 
+      PARAMETER,
       AngleBracket_STRING,
       hljs.HASH_COMMENT_MODE,
       QUOTE_STRING,
