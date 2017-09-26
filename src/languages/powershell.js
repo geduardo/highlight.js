@@ -18,7 +18,7 @@ function(hljs) {
 
   var PSCOMMAND = {
     className: 'pscommand',
-    begin: /[A-Z][a-z]+-[A-Z][a-z]+[A-Za-z]*/
+    begin: /[A-Z][a-z]+-[A-Z][a-z]+[A-Za-z0-9]*/
   };
   
   var LITERAL = {
