@@ -63,6 +63,10 @@ function(hljs) {
         contains: [{begin: '/\\*', end: '\\*/', skip: true}]
       },
       {
+        begin: '<script runat="server">', end: '</script>',
+        subLanguage: ['cs', 'vbscript']
+      },
+      {
         className: 'tag',
         /*
         The lookahead pattern (?=...) ensures that 'begin' only matches
