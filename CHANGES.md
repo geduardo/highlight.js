@@ -3,6 +3,7 @@
 New language:
 
 - *MikroTik* RouterOS Scripting language by [Ivan Dementev][].
+- *OData* by [Stanislaw Swierc][]
 
 New style:
 
