@@ -33,7 +33,7 @@ function(hljs) {
     ]
   };
   return {
-    aliases: ['html', 'xhtml', 'rss', 'atom', 'xjb', 'xsd', 'xsl', 'plist', 'xaml'],
+    aliases: ['html', 'xhtml', 'rss', 'atom', 'xjb', 'xsd', 'xsl', 'plist', 'xaml', 'aspx-csharp', 'aspx-vb'],
     case_insensitive: true,
     contains: [
       {
@@ -63,10 +63,6 @@ function(hljs) {
         contains: [{begin: '/\\*', end: '\\*/', skip: true}]
       },
       {
-        begin: '<script runat="server">', end: '</script>',
-        subLanguage: ['cs', 'vbscript']
-      },
-      {
         className: 'tag',
         /*
         The lookahead pattern (?=...) ensures that 'begin' only matches
@@ -80,6 +76,17 @@ function(hljs) {
         starts: {
           end: '</style>', returnEnd: true,
           subLanguage: ['css', 'xml']
+        }
+      },
+      {
+        className: 'tag',
+        // See the comment in the <style tag about the lookahead pattern
+        begin: '<script(?= runat="server"|>|$)', end: '>',
+        keywords: {name: 'script'},
+        contains: [TAG_INTERNALS],
+        starts: {
+          end: '\<\/script\>', returnEnd: true,
+          subLanguage: ['cs', 'vbscript']
         }
       },
       {
