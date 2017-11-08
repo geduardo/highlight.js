@@ -1,3 +1,11 @@
+## Version 9.13.0
+
+New language:
+
+- *CSHTML* by [Roman Resh][]
+
+[Roman Resh]: https://github.com/romanresh
+
 ## Version 9.12.0
 
 New language:
