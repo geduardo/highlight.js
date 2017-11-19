@@ -31,8 +31,7 @@ function(hljs) {
         // Literal values represented as string (e.g. binary'T0RhdGE')
         className: 'string',
         begin: '[a-zA-Z_][a-zA-Z0-9_.]*\'',
-        end: '\'',
-        relevance: 0
+        end: '\''
       },
       {
         // Constants 
@@ -56,7 +55,7 @@ function(hljs) {
         // DateTimeOffset
         className: 'literal',
         begin: "\\b([0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9][0-9]:[0-9][0-9](:[0-9][0-9](\\.[0-9]+)?)?)?([zZ]|([+-]|%2B)([01][0-9]|2[0-3]):?([0-5][0-9])?))\\b",
-        relevance: 0
+        relevance: 10
       },
       hljs.C_NUMBER_MODE,
       {
