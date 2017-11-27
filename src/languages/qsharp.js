@@ -136,13 +136,6 @@ function(hljs) {
       ),
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
-      {
-        className: 'meta',
-        begin: '#', end: '$',
-        keywords: {
-          'meta-keyword': 'if elif else repeat until fixup for in \.\. return fail'
-        }
-      },
       STRING,
       hljs.C_NUMBER_MODE,
       {
@@ -171,12 +164,12 @@ function(hljs) {
           { className: 'meta-string', begin: /"/, end: /"/ }
         ]
       },
-      {
-        // Expression keywords prevent 'keyword Name(...)' from being
-        // recognized as a function definition
-        beginKeywords: 'new return throw await else',
-        relevance: 0
-      },
+      // {
+      //   // Expression keywords prevent 'keyword Name(...)' from being
+      //   // recognized as a function definition
+      //   beginKeywords: 'new return throw await else',
+      //   relevance: 0
+      // },
       {
         className: 'function',
         begin: '(' + TYPE_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
