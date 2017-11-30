@@ -46,7 +46,7 @@ function(hljs) {
     contains: [{ begin: '""' }]
   };
 
-  var VERBATIM_STRING_NO_LF = hljs.inherit(VERBATIM_STRING, { illegal: /\n/ });
+  // var VERBATIM_STRING_NO_LF = hljs.inherit(VERBATIM_STRING, { illegal: /\n/ });
 
   var SUBST = {
     className: 'subst',
@@ -56,50 +56,12 @@ function(hljs) {
 
   var SUBST_NO_LF = hljs.inherit(SUBST, { illegal: /\n/ });
 
-  var INTERPOLATED_STRING = {
-    className: 'string',
-    begin: /\$"/, end: '"',
-    illegal: /\n/,
-    contains: [{ begin: '{{' }, { begin: '}}' }, hljs.BACKSLASH_ESCAPE, SUBST_NO_LF]
-  };
-
-  var INTERPOLATED_VERBATIM_STRING = {
-    className: 'string',
-    begin: /\$@"/, end: '"',
-    contains: [{ begin: '{{' }, { begin: '}}' }, { begin: '""' }, SUBST]
-  };
-
-  var INTERPOLATED_VERBATIM_STRING_NO_LF = hljs.inherit(INTERPOLATED_VERBATIM_STRING, {
-    illegal: /\n/,
-    contains: [{ begin: '{{' }, { begin: '}}' }, { begin: '""' }, SUBST_NO_LF]
-  });
-
-  SUBST.contains = [
-    INTERPOLATED_VERBATIM_STRING,
-    INTERPOLATED_STRING,
-    VERBATIM_STRING,
-    hljs.APOS_STRING_MODE,
-    hljs.QUOTE_STRING_MODE,
-    hljs.C_NUMBER_MODE,
-    hljs.C_BLOCK_COMMENT_MODE
-  ];
-
-  SUBST_NO_LF.contains = [
-    INTERPOLATED_VERBATIM_STRING_NO_LF,
-    INTERPOLATED_STRING,
-    VERBATIM_STRING_NO_LF,
-    hljs.APOS_STRING_MODE,
-    hljs.QUOTE_STRING_MODE,
-    hljs.C_NUMBER_MODE,
-    hljs.inherit(hljs.C_BLOCK_COMMENT_MODE, { illegal: /\n/ })
-  ];
-
   var STRING = {
+    className: 'string',
+    begin: '"', end: '"',
+    contains: [{ begin: '{{' }, { begin: '}}' }, { begin: '""' }, SUBST],
     variants: [
-      INTERPOLATED_VERBATIM_STRING,
-      INTERPOLATED_STRING,
       VERBATIM_STRING,
-      hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE
     ]
   };
@@ -136,7 +98,6 @@ function(hljs) {
       ),
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
-      STRING,
       hljs.C_NUMBER_MODE,
       {
         beginKeywords: 'class interface', end: /[{;=]/,
@@ -164,24 +125,12 @@ function(hljs) {
           { className: 'meta-string', begin: /"/, end: /"/ }
         ]
       },
-      // {
-      //   // Expression keywords prevent 'keyword Name(...)' from being
-      //   // recognized as a function definition
-      //   beginKeywords: 'new return throw await else',
-      //   relevance: 0
-      // },
       {
         className: 'function',
         begin: '(' + TYPE_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
         end: /[{;=]/, excludeEnd: true,
         keywords: KEYWORDS,
         contains: [
-          // uncomment to add name highlighting on outer functions
-          // {
-          //   begin: hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
-          //   contains: [hljs.TITLE_MODE],
-          //   relevance: 0
-          // },
           {
             className: 'params',
             begin: /\(/, end: /\)/,
@@ -203,6 +152,7 @@ function(hljs) {
           },
           hljs.C_LINE_COMMENT_MODE,
           hljs.C_BLOCK_COMMENT_MODE,
+          STRING,
           TYPES,
           RESERVED,
           CONSTANTS,
@@ -211,6 +161,7 @@ function(hljs) {
           CSHARP_RESERVED
         ]
       },
+      STRING,
       TYPES,
       RESERVED,
       CONSTANTS,
