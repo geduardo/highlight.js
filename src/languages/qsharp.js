@@ -9,7 +9,7 @@ function(hljs) {
 
   var TYPES = {
     className: 'keyword',
-    begin: '\\W(Int|Double|Bool|Qubit|Pauli|Result|Range|String)\\b'
+    begin: '\\b(Int|Double|Bool|Qubit|Pauli|Result|Range|String)\\b'
   };
 
   var RESERVED = {
