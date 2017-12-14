@@ -1,0 +1,17 @@
+namespace Microsoft.Quantum.Canon {
+    open Microsoft.Quantum.Primitive
+    
+    /// Use this to generate an array of couplings 
+    operation GenerateRandom1DJCoupling(nSites: Int) : Double[] {
+        body {
+            mutable jCCouplings = new Double[nSites]
+            let bitsOfRandomness = 8
+            for(idx in 0..nSites-1) {
+                set jCCouplings[idx] = RandomReal(bitsOfRandomness)
+            }
+            return jCCouplings
+        }
+    }
+    // Have a nice day.
+}
+
