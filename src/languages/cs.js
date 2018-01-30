@@ -141,7 +141,12 @@ function(hljs) {
         className: 'meta',
         begin: '^\\s*\\[', excludeBegin: true, end: '\\]', excludeEnd: true,
         contains: [
-          {className: 'meta-string', begin: /"/, end: /"/}
+          INTERPOLATED_VERBATIM_STRING_NO_LF,
+          INTERPOLATED_STRING,
+          VERBATIM_STRING_NO_LF,
+          hljs.APOS_STRING_MODE,
+          hljs.QUOTE_STRING_MODE,
+          hljs.C_NUMBER_MODE
         ]
       },
       {
