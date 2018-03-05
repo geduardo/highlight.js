@@ -6,6 +6,12 @@ New languages:
 
 [Stanislaw Swierc]: https://github.com/StanislawSwierc
 
+New language:
+
+- *CSHTML* by [Roman Resh][]
+
+[Roman Resh]: https://github.com/romanresh
+
 ## Version 9.12.0
 
 New language:
