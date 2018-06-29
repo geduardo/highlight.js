@@ -1,0 +1,2 @@
+select * from t where t.select is null;
+times(2) with time zone
