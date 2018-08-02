@@ -1,0 +1,5 @@
+let _start = datetime(2017-01-01);
+let _end = datetime(2017-01-31);
+range _day from _start to _end  step 1d
+| extend d = tolong((_day - _start)/1d)
+| render timechart

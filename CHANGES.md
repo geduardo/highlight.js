@@ -9,6 +9,7 @@ New languages:
 New language:
 
 - *CSHTML* by [Roman Resh][]
+- *KUSTO* by [Viktar Pakanechny][]
 
 [Roman Resh]: https://github.com/romanresh
 

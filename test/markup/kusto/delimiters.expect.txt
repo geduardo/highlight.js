@@ -1,0 +1,5 @@
+<span class="hljs-keyword">let</span> _start = <span class="hljs-number">datetime(2017-01-01)</span>;
+<span class="hljs-keyword">let</span> _end = <span class="hljs-number">datetime(2017-01-31)</span>;
+<span class="hljs-keyword">range</span> _day <span class="hljs-keyword">from</span> _start <span class="hljs-keyword">to</span> _end  <span class="hljs-keyword">step</span> <span class="hljs-number">1</span>d
+| <span class="hljs-title">extend</span> d = <span class="hljs-keyword">tolong</span>((_day - _start)/<span class="hljs-number">1</span>d)
+| <span class="hljs-title">render</span> <span class="hljs-keyword">timechart</span>
