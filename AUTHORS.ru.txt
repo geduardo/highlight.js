@@ -253,3 +253,4 @@ URL:   https://highlightjs.org/
 - Мортен Пибелехт <morten.piibeleht@gmail.com>
 - Мартин Клаузен <martin.clausene@gmail.com>
 - Роман Реш <romanresh@live.com>
+- Виктор Поконечный <vityanchys@gmail.com>
