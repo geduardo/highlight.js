@@ -1,0 +1,2 @@
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> t <span class="hljs-keyword">where</span> t.<span class="hljs-keyword">select</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">times</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">with time zone</span>
