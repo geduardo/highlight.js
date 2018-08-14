@@ -6,9 +6,10 @@ New languages:
 
 [Stanislaw Swierc]: https://github.com/StanislawSwierc
 
-New language:
+New languages:
 
 - *CSHTML* by [Roman Resh][]
+- *KUSTO* by [Viktar Pakanechny][]
 - *U-SQL* by [Viktar Pakanechny][]
 
 [Roman Resh]: https://github.com/romanresh
