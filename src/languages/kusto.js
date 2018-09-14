@@ -25,8 +25,8 @@ function(hljs) {
       'rightantisemi rightsemi rightouter ';
     var OTHER_TOKENS = 'mining now ago datetime ingestion_time time timespan dynamic decimal todatetime between !between '+
       'row_number extent_id extent_tags pi pack_all rowstore_ordinal_range cluster database table iff iif range replace '+
-      'translate series_iir bin_at series_fill_const datetime_diff datetime_add connect filter fork facet range consume '+
-      'find search print count countif dcount dcountif sum min max avg avgif any makelist makeset make_dictionary stdev '+
+      'translate series_iir bin_at bin_auto series_fill_const datetime_diff datetime_add connect filter fork facet range consume '+
+      'find search print count countif dcount dcountif sum min max avg avgif any makelist makeset make_dictionary make_string stdev '+
       'stdevif varianceif variance buildschema hll hll_merge tdigest tdigest_merge percentile sumif percentilew arg_min '+
       'arg_max percentilesw_array percentilesw percentiles_array percentiles count countif dcount dcountif sum min max '+
       'avg any stdev stdevp variance variancep sumif autocluster diffpatterns basket extractcolumns ';
@@ -35,17 +35,22 @@ function(hljs) {
       'tobool toboolean todynamic toobject toint tolong toguid todouble toreal totimespan tohex todecimal isempty isnotempty '+
       'isnull isnotnull isnan isinf isfinite dayofweek dayofmonth dayofyear weekofyear monthofyear sqrt rand log log10 log2 '+
       'exp exp2 exp10 absdegreesradianssign sin cos tan asin acos atancot getmonth getyear arraylength gettype cursor_after '+
+      'cursor_current cursor_before_or_at estimate_data_size '+
       'gamma loggamma dcount_hll parse_ipv4 parse_url parse_path parse_version parse_urlquery url_encode url_decode binary_not '+
       'not toscalar materialize series_stats series_fit_line series_fit_2lines series_stats_dynamic series_fit_line_dynamic '+
-      'series_fit_2lines_dynamic base64_encodestring base64_decodestring hash_sha256 ceiling ';
+      'series_add series_subtract series_multiply series_divide series_greater series_greater_equals series_less series_less_equals '+
+      'series_equals series_not_equals series_seasonal series_decompose isascii isutf8 '+
+      'series_fit_2lines_dynamic base64_encodestring base64_decodestring hash_sha256 ceiling current_principal '+
+      'current_principal_details';
     var TWO_PARAM_FUNC_TOKENS = 'bin columnifexists floor countof hash round pow binary_and binary_or binary_xor '+
       'binary_shift_left binary_shift_right datepart datetime_part repeat series_outliers rank_tdigest percentrank_tdigest '+
       'trim trim_start trim_end startofdaystartofweek startofmonth startofyear endofday endofweek endofmonth endofyear '+
       'series_fill_backward  series_fill_forward atan2 format_datetime format_timespan strrep strcat_array parse_user_agentstrcmp '+
-      'row_cumsum ';
+      'row_cumsum distance point';
     var MANY_PARAM_FUNC_TOKENS = 'extract extractjson extractall strcat strcat_delim substring indexof split case coalesce '+
       'max_of min_of percentile_tdigest zip pack pack_array array_concat welch_test series_fir series_periods_detect prev next '+
-      'tdigest_merge hll_merge series_fill_linear series_periods_validate datatable make_datetime make_timespan ';
+      'tdigest_merge hll_merge series_fill_linear series_periods_validate datatable make_datetime make_timespan '+
+      'beta_inv beta_cdf beta_pdf';
     var KUSTO_KEYWORDS = CONTROL_COMMANDS_TOKENS+CSL_COMMANDS_TOKENS+CHART_RENDER_TYPES_TOKENS+CHART_RENDER_KIND_TOKENS+SUB_OPERATORS_TOKEN+
       JOIN_KIND_TOKENS+OTHER_TOKENS+DATA_TYPES_TOKENS+SINGLE_PARAM_FUNC_NO_DATE_TIME_TOKENS+TWO_PARAM_FUNC_TOKENS+MANY_PARAM_FUNC_TOKENS;
     return {
