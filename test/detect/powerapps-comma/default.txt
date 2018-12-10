@@ -1,0 +1,5 @@
+// Say Hello, comma decimal separator
+Set( x; 1,234 );;
+Collect( Message; [ "Hello"; " "; "world with a number: "; x ] );;
+Notify( Concat( Message; Value ) )
+
