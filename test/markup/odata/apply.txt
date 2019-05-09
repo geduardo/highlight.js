@@ -1,0 +1,13 @@
+$apply=filter(BuildPipeline/BuildPipelineId eq 8 and DateSK ge 20190319   and Workflow eq 'Build')
+        /groupby((TestSK, Test/TestName),
+                aggregate(ResultCount with sum as TotalCount,
+                          ResultDurationSeconds with sum as TotalDuration,
+                          ResultPassCount with sum as PassedCount,
+                          ResultFailCount with sum as FailedCount,
+                          ResultNotExecutedCount with sum as NotExecutedCount,
+                          ResultNotImpactedCount with sum as NotImpactedCount))
+        /compute(TotalDuration div cast(TotalCount, Edm.Double) as AvgDuration,
+                 iif(TotalCount gt NotExecutedCount,
+                 ((PassedCount add NotImpactedCount) div cast(TotalCount sub NotExecutedCount, Edm.Decimal)) mul 100, 0) as PassRate)
+        &$orderby=FailedCount desc
+        &$top=20

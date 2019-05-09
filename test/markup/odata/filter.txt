@@ -1,0 +1,1 @@
+$filter=WorkItemId gt 1 and startswith(Title, ' Test') and State eq @state&@state='Closed'
