@@ -10,6 +10,13 @@ describe('.getLanguage()', function() {
     result.should.be.instanceOf(Object);
   });
 
+  it('should get the cshtml language by razor alias', function() {
+    const result = hljs.getLanguage('razor');
+
+    result.should.be.instanceOf(Object);
+    result.should.have.property('aliases').with.containEql('cshtml');
+  });
+
   it('should be case insensitive', function() {
     const result = hljs.getLanguage('pYTHOn');
 

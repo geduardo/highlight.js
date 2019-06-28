@@ -368,6 +368,7 @@ function(hljs) {
 
     return {
         subLanguage: 'xml',
+        aliases: ['razor'],
         contains: [
             hljs.COMMENT("@\\*", "\\*@"),
             EXCEPTIONS,
