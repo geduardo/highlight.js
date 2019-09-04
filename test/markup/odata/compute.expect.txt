@@ -1,0 +1,1 @@
+<span class="hljs-keyword">$compute</span>=<span class="hljs-symbol">WorkItemId</span> mul <span class="hljs-symbol">WorkItemId</span> as <span class="hljs-symbol">DoubleId</span>

@@ -61,7 +61,7 @@ function(hljs) {
       {
         // Query options
         className: 'keyword',
-        begin: '\\$(apply|count|filter|orderby|select|skip|top|expand|it|root|count)\\b',
+        begin: '\\$(apply|count|filter|orderby|select|skip|top|expand|it|root|count|compute|search|ref|crossjoin|index|levels|format|schemaversion)\\b',
         relevance: 10
       },
       {
@@ -69,19 +69,19 @@ function(hljs) {
         begin: '\\b('+ 
           // Built-in functions
           'concat|contains|endswith|indexof|length|startswith|substring|tolower|toupper|trim|date|day|fractionalseconds|hour|' +
-          'maxdatetime|mindatetime|minute|month|now|second|time|totaloffsetminutes|totalseconds|year|ceiling|floor|round|cast|' +
+          'maxdatetime|mindatetime|minute|month|now|second|time|totaloffsetminutes|totalseconds|year|ceiling|floor|round|cast|iif|' +
           'isof|geo\\.distance|geo\\.intersects|geo\\.length|'+
           // Lambda operators
           'any|all|' +
           // Aggregation methods
           'sum|min|max|average|countdistinct|'+
           // Aggregation transformations
-          'aggregate|topcount|topsum|toppercent|bottomcount|bottomsum|bottompercent|identity|concat|groupby|filter|expand' +
+          'aggregate|topcount|topsum|toppercent|bottomcount|bottomsum|bottompercent|identity|concat|groupby|filter|expand|compute' +
           ')\\b',
       },
       {
         // Operators should have no markup
-        begin: '\\b(and|or|add|div|eq|ge|gt|le|lt|mod|mul|ne|not|sub|with|as)\\b',
+        begin: '\\b(and|or|add|div|divn|eq|ge|gt|le|lt|mod|mul|ne|not|sub|with|as|in)\\b',
         relevance: 0
       },
       {
@@ -89,6 +89,11 @@ function(hljs) {
         begin: '[a-zA-Z_][a-zA-Z0-9_]*',
         relevance: 0,
       },
+      {
+        className: 'parameter',
+        begin: '@[a-zA-Z_][a-zA-Z0-9_]*',
+        relevance: 0,
+      },      
     ]
   };
 }

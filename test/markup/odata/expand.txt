@@ -1,0 +1,3 @@
+$expand=Sales($apply=aggregate(Amount with sum as Total);$compute=Total mul Total as DoubleTotal),
+        Orders($select=OrderId;$filter=Qty gt 10),
+        Category($levels=2)
