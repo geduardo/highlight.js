@@ -69,7 +69,7 @@ function hljsDefineTerraform(hljs) {
 	};
 
 return {
-	aliases: ['tf', 'hcl'],
+	aliases: ['tf', 'hcl','terraform'],
 	keywords: 'resource variable provider output locals module data terraform|10',
 	literal: 'false true null',
 	contains: [
