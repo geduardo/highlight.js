@@ -1,21 +1,12 @@
 /*
- * highlight.js terraform syntax highlighting definition
- *
- * @see https://github.com/highlightjs/highlight.js
- *
- * :TODO:
- *
- * @package: highlightjs-terraform
- * @author:  Nikos Tsirmirakis <nikos.tsirmirakis@winopsdba.com>
- * @since:   2019-03-20
- *
- * Description: Terraform (HCL) language definition
- * Category: scripting
- */
+Language: HCL (HashiCorp configuration language)
+Author: Based on https://github.com/highlightjs/highlightjs-terraform
+Contributors: Nikos Tsirmirakis <nikos.tsirmirakis@winopsdba.com>
+Category: scripting
+*/
 
-var module = module ? module : {};     // shim for browser use
+function(hljs) {
 
-function hljsDefineTerraform(hljs) {
 	var NUMBERS = {
 		className: 'number',
 		begin: '\\b\\d+(\\.\\d+)?',
@@ -68,20 +59,15 @@ function hljsDefineTerraform(hljs) {
 		}]
 	};
 
-return {
-	aliases: ['tf', 'hcl','terraform'],
-	keywords: 'resource variable provider output locals module data terraform|10',
-	literal: 'false true null',
-	contains: [
-   		hljs.COMMENT('\\#', '$'),
-   		NUMBERS,
-		STRINGS
-	]
-}
-}
 
-module.exports = function(hljs) {
-    hljs.registerLanguage('terraform', hljsDefineTerraform);
-};
-
-module.exports.definer = hljsDefineTerraform;
+  return {
+    aliases: ['tf', 'terraform'],
+    keywords: 'resource variable provider output locals module data terraform|10',
+    literal: 'false true null',
+    contains: [
+         hljs.COMMENT('\\#', '$'),
+         NUMBERS,
+      STRINGS
+    ]
+    };
+}
