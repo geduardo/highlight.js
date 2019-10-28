@@ -18,7 +18,7 @@ function(hljs) {
       'maxof minof mod new next noFetch notExists null optimisticLock order outer pause pessimisticLock print private protected public ' +
       'real repeatableRead retry return reverse select server setting ' +
       'static str sum super tableLock this throw try ttsAbort ttsBegin ttsCommit ' +
-      ' update_recordset validTimeState void where while window',
+      'update_recordset validTimeState void where while window ',
     literal:
       'null false true'
   };
