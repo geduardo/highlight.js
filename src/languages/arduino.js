@@ -72,7 +72,7 @@ function(hljs) {
         'remoteIP transfer shutdown hangCall beginSMS ' +
         'endWrite attached maintain noCursor checkReg ' +
         'checkPUK shiftOut isValid shiftIn pulseIn ' +
-        'connect println localIP pinMode getIMEI ' +
+        'connect println localIP pinMode|10 getIMEI ' +
         'display noBlink process getBand running beginSD ' +
         'drawBMP lowByte setBand release bitRead prepare ' +
         'pointTo readRed setMode noFill remove listen ' +
