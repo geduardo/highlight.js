@@ -2,6 +2,12 @@
 
 New languages:
 
+- *X++* by [Robin Reynolds-Haertle][]
+
+[Robin Reynolds-Haertle]: https://github.com/RobinARH
+
+New languages:
+
 - *DAX* by [Stanislaw Swierc][]
 
 [Stanislaw Swierc]: https://github.com/StanislawSwierc
