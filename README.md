@@ -32,6 +32,7 @@ work for you, you can specify the language in the `class` attribute:
 
 | Language                | Classes                | Package |
 | :-----------------------| :--------------------- | :------ |
+| .NET Core CLI           | dotnetcli              |         |
 | 1C                      | 1c                     |         |
 | ABNF                    | abnf                   |         |
 | Access logs             | accesslog              |         |
