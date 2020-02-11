@@ -28,14 +28,14 @@ function(hljs) {
     };
 
     var DIRECTIVES = {
-        begin: "^@(addTagHelper|implements|inherits|inject|model|namespace|using)[^\\r\\n{\\(]*$",
+        begin: "^@(addTagHelper|attribute|implements|inherits|inject|model|namespace|using)[^\\r\\n{\\(]*$",
         end: "$",
         className: SPECIAL_SYMBOL_CLASSNAME,
         returnBegin: true,
         returnEnd: true,
         contains: [
             {
-                begin: "@(addTagHelper|implements|inherits|inject|model|namespace|using)",
+                begin: "@(addTagHelper|attribute|implements|inherits|inject|model|namespace|using)",
                 className: SPECIAL_SYMBOL_CLASSNAME,
             },
             {
