@@ -1,4 +1,8 @@
+@implements IDisposable
+@using RazorPagesIntro.Pages
 @model Person
+@namespace RazorPagesContacts.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Bootstrap Editors";
