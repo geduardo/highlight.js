@@ -51,6 +51,10 @@ function(hljs) {
       ),
       hljs.C_NUMBER_MODE,
       {
+        className: 'literal',
+        begin: '#', end: '#'
+      },
+      {
         className: 'meta',
         begin: '#', end: '$',
         keywords: {'meta-keyword': 'if else elseif end region externalsource'}
