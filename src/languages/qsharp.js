@@ -8,8 +8,13 @@ function(hljs) {
   // qflat specific declarations
 
   var KEYWORDS = {
-    keyword: 'Int Double Bool Qubit Pauli Result Range String ' +
-    'let set new using borrowing newtype mutable namespace open operation function body adjoint Adjoint controlled Controlled self auto none',
+    keyword:  'let set new using borrowing newtype ' +
+              'mutable namespace open operation function ' +
+              'body adjoint Adjoint controlled Controlled ' +
+              'self auto none ' +
+              'internal Adj Ctl is as within apply ' +
+    //datatypes
+              'Int BigInt Unit Double Bool String Qubit Pauli Result Range Callable Array',
     constant: 'true false PauliI PauliX PauliY PauliZ One Zero',
     control: 'if elif else repeat until fixup for in .. return fail',
     helper: 'Message Length Assert AssertProb AssertEqual Random Floor Float ' +
