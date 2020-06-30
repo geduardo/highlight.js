@@ -62,7 +62,8 @@ function(hljs) {
             {
                 // properly highlight all modifiers
                 className: 'keyword',
-                beginKeywords: 'not null constant access function procedure in out aliased exception'
+                beginKeywords: 'not null constant access function procedure in out aliased exception',
+                relevance:10
             },
             {
                 className: 'type',
@@ -166,6 +167,10 @@ function(hljs) {
                 keywords: 'type',
                 excludeBegin: true,
                 illegal: BAD_CHARS
+            },
+            {
+                begin: '\\s*:=\\s*',
+                relevance:40
             },
 
             // see comment above the definition
