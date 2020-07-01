@@ -51,7 +51,7 @@ Author: Duncan Mackenzie <duncanma@duncanmackenzie.net>
       keyword:
         'az',
       literal:
-        'true false',
+        'true false json jsonc yaml table tsv none',
       built_in:
         'ls cd'
     },
@@ -59,7 +59,7 @@ Author: Duncan Mackenzie <duncanma@duncanmackenzie.net>
       {
         // Match nouns and verbs after root
         className: 'keyword',
-        begin: '\\a\\z (\\b[a-zA-Z][a-zA-Z0-9_-]* ){1,3}',
+        begin: '\\a\\z (\\b[a-zA-Z][a-zA-Z0-9_-]*( |$)){1,3}',
         relevance: 0
       },
       {
